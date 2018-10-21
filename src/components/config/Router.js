@@ -2,7 +2,7 @@ import { createStackNavigator, createDrawerNavigator } from "react-navigation";
 import React from "react";
 import { Button } from "native-base";
 import Icon from "react-native-vector-icons/Ionicons";
-import { ParentComp, MenuItem1 } from "../screens";
+import { ParentComp, MenuItem1, SubmitForm } from "../screens";
 
 //Stacknaviagtor is main naviagtor which ahs drawer navigator nested in it and name of other navigator shows which screen they belngs to
 const ParentCompNavigation = createStackNavigator({
@@ -26,6 +26,9 @@ const ParentCompNavigation = createStackNavigator({
       },
       headerBackTitle: null
     })
+  },
+  SubmitFormScreen: {
+    screen: SubmitForm
   }
 });
 const Drawer = createDrawerNavigator(

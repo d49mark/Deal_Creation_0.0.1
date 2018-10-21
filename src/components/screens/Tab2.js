@@ -4,7 +4,7 @@ import { MyForm } from "../common/MyForm";
 import moment from "moment";
 import { Button } from "native-base";
 import t from "tcomb-form-native";
-import { invoiceChanged, showCard, submitForm, setWarning } from "../Actions";
+import { invoiceChanged, showCard, setWarning } from "../Actions";
 import { connect } from "react-redux";
 import Icon from "react-native-vector-icons/FontAwesome";
 
@@ -12,7 +12,7 @@ class Tab2 extends Component {
   //handle submission of Form
   handleSubmit() {
     const value = this.invoice.getValue();
-    if (value) this.props.dispatch(submitForm());
+    if (value) this.props.navigation.navigate("SubmitFormScreen");
   }
   //Look for changes
   async _onChange(value) {
@@ -41,7 +41,9 @@ class Tab2 extends Component {
   render() {
     //Warning variable
     let warningDisplay = this.props.warning ? (
-      <Text note>NOTE: LISTING DATE NOT BETWEEN REPAYMENT AND ISSUED DATE</Text>
+      <Text note style={{ color: "red" }}>
+        NOTE: LISTING DATE NOT BETWEEN REPAYMENT AND ISSUED DATE
+      </Text>
     ) : null;
     //name validator
     const Name = t.refinement(t.String, name => {

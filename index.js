@@ -11,6 +11,8 @@ import createSagaMiddleware from "redux-saga";
 import rootSaga from "./src/components/Sagas";
 
 const sagaMiddleware = createSagaMiddleware();
+console.disableYellowBox = true;
+
 //make store
 const store = createStore(reducer, applyMiddleware(sagaMiddleware));
 sagaMiddleware.run(rootSaga);
