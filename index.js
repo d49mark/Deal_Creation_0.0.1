@@ -12,10 +12,7 @@ import rootSaga from "./src/components/Sagas";
 
 const sagaMiddleware = createSagaMiddleware();
 //make store
-const store = createStore(
-  reducer,
-  window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__(applyMiddleware(sagaMiddleware))
-);
+const store = createStore(reducer, applyMiddleware(sagaMiddleware));
 sagaMiddleware.run(rootSaga);
 //wrap main component in store
 const AppContainer = () => {
