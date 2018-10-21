@@ -8,7 +8,7 @@ Follow Steps to run on android or ios
 ### Prerequisites
 npm, react-native cli, android studio, Xcode
 
-### Installing
+### Installation
 1. Download Zip or clone repository.
 2. Extract and cd into Project Directory.
 3. Create simulator using AVD manager in case of android and set simulator using Xcode in ios in whichever you wish to run
